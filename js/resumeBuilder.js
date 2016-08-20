@@ -33,3 +33,40 @@ var education ={
 	}
 ]
 }
+
+var work ={
+"jobs":[
+	{
+		"employer" : "Freelance",
+		"title" : "Developer",
+		"location": "HK",
+	    "dates": "In Progress",
+	    "description": "All kinds of stuff"
+	}
+]
+}
+
+
+var projects =  {
+"proj":[
+	{
+		"title" : "UX Design",
+		"dates" : "in Progress",
+	    "description": "All kinds of stuff",
+	    "images": {"https://img1.wsimg.com/fos/sales/cwh/8/images/cats-with-hats-shop-02.jpg","https://img1.wsimg.com/fos/sales/cwh/8/images/cats-with-hats-shop-02.jpg"}
+	}
+]
+}
+
+
+
+var projects = {
+"proj":[
+	{
+		"title" : "UX design",
+		"dates" : 2016,
+		"description": "UX for website",
+		"images": ["https://img1.wsimg.com/fos/sales/cwh/8/images/cats-with-hats-shop-02.jpg", "https://img1.wsimg.com/fos/sales/cwh/8/images/cats-with-hats-shop-02.jpg"]
+	}
+]
+}
