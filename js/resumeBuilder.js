@@ -14,7 +14,7 @@ var bio = {
 
 
 var education ={
-"school":[
+	"school":[
 	{
 		"name" : "WSCAD",
 		"location" : "London",
@@ -23,19 +23,19 @@ var education ={
 	    "dates": 2006,
 	    "url": "http:www.apple.com"
 	}
-],
-"onlineCourses" :[
+	],
+	"onlineCourses" :[
 	{
 		"title" : "FEWD",
 		"school" : "Udacity",
 		"dates": 2016,
 	    "url": "http:www.udacity.com"
 	}
-]
-}
+ 	]
+};
 
 var work ={
-"jobs":[
+	"jobs":[
 	{
 		"employer" : "Freelance",
 		"title" : "Developer",
@@ -43,20 +43,8 @@ var work ={
 	    "dates": "In Progress",
 	    "description": "All kinds of stuff"
 	}
-]
-}
-
-
-var projects =  {
-"proj":[
-	{
-		"title" : "UX Design",
-		"dates" : "in Progress",
-	    "description": "All kinds of stuff",
-	    "images": {"https://img1.wsimg.com/fos/sales/cwh/8/images/cats-with-hats-shop-02.jpg","https://img1.wsimg.com/fos/sales/cwh/8/images/cats-with-hats-shop-02.jpg"}
-	}
-]
-}
+	]
+};
 
 
 
@@ -68,5 +56,5 @@ var projects = {
 		"description": "UX for website",
 		"images": ["https://img1.wsimg.com/fos/sales/cwh/8/images/cats-with-hats-shop-02.jpg", "https://img1.wsimg.com/fos/sales/cwh/8/images/cats-with-hats-shop-02.jpg"]
 	}
-]
-}
+	]
+};
