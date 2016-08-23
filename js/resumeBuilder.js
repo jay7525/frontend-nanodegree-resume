@@ -50,14 +50,21 @@ var work ={
 		"title" : "Developer",
 		"location": "HK",
 	    "dates": "In Progress",
-	    "description": "All kinds of stuff"
+	    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 	},
 	{
 		"employer" : "Tago",
 		"title" : "Senior Developer",
-		"location": "HK",
+		"location": "UK",
 	    "dates": "In Progress",
-	    "description": "Same kinds of stuff"
+	    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+	},
+	{
+		"employer" : "SAt",
+		"title" : "Junior Developer",
+		"location": "UK",
+	    "dates": "In Progress",
+	    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 	}
 	]
 };
@@ -98,11 +105,20 @@ console.log(totalJobs);
 for (jobs in work) {
 	$("#workExperience").append(HTMLworkStart);
 	for (i = 0; i < totalJobs; i++){
-		$("#workExperience").append(HTMLworkEmployer.replace("%data%", work[jobs][i].employer));
-		$("#workExperience").append(HTMLworkTitle.replace("%data%", work[jobs][i].title));
+		$(".work-entry:last").append(HTMLworkEmployer.replace("%data%", work[jobs][i].employer) + HTMLworkTitle.replace("%data%", work[jobs][i].title));
+		$(".work-entry:last").append(HTMLworkDates.replace("%data%", work[jobs][i].dates));
+		$(".work-entry:last").append(HTMLworkLocation.replace("%data%", work[jobs][i].location));
+		$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work[jobs][i].description));
 	};
 };
 
+
+
+// for (job in work.jobs) {
+// 	$("#workExperience").append(HTMLworkStart);
+// 		$(".work-entry:last").append(HTMLworkEmployer.replace("%data%", work[jobs][i].employer) + HTMLworkTitle.replace("%data%", work[jobs][i].title));
+
+// };
 
 
 
