@@ -51,9 +51,17 @@ var work ={
 		"location": "HK",
 	    "dates": "In Progress",
 	    "description": "All kinds of stuff"
+	},
+	{
+		"employer" : "Tago",
+		"title" : "Senior Developer",
+		"location": "HK",
+	    "dates": "In Progress",
+	    "description": "Same kinds of stuff"
 	}
 	]
 };
+
 
 var projects = {
 "proj":[
@@ -84,3 +92,24 @@ if (bio.skills !== 0) {
 
 
 
+var totalJobs = work.jobs.length;
+console.log(totalJobs);
+
+for (jobs in work) {
+	$("#workExperience").append(HTMLworkStart);
+	for (i = 0; i < totalJobs; i++){
+		$("#workExperience").append(HTMLworkEmployer.replace("%data%", work[jobs][i].employer));
+		$("#workExperience").append(HTMLworkTitle.replace("%data%", work[jobs][i].title));
+	};
+};
+
+
+
+
+// for (jobs in work) {
+	// for (i = 0; i < totalJobs; i++){
+
+	// 	$("#workExperience").append(HTMLworkStart);
+	// };
+
+// };
