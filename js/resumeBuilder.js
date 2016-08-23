@@ -97,28 +97,36 @@ if (bio.skills !== 0) {
 	$("#header").append(HTMLskills.replace("%data%", bio.skills [2]));
 };
 
+//OPTION 1 LOOP
 
+// var totalJobs = work.jobs.length;
+// console.log(totalJobs);
 
-var totalJobs = work.jobs.length;
-console.log(totalJobs);
-
-for (jobs in work) {
-	$("#workExperience").append(HTMLworkStart);
-	for (i = 0; i < totalJobs; i++){
-		$(".work-entry:last").append(HTMLworkEmployer.replace("%data%", work[jobs][i].employer) + HTMLworkTitle.replace("%data%", work[jobs][i].title));
-		$(".work-entry:last").append(HTMLworkDates.replace("%data%", work[jobs][i].dates));
-		$(".work-entry:last").append(HTMLworkLocation.replace("%data%", work[jobs][i].location));
-		$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work[jobs][i].description));
-	};
-};
-
-
-
-// for (job in work.jobs) {
+// for (jobs in work) {
 // 	$("#workExperience").append(HTMLworkStart);
+// 	for (i = 0; i < totalJobs; i++){
 // 		$(".work-entry:last").append(HTMLworkEmployer.replace("%data%", work[jobs][i].employer) + HTMLworkTitle.replace("%data%", work[jobs][i].title));
-
+// 		$(".work-entry:last").append(HTMLworkDates.replace("%data%", work[jobs][i].dates));
+// 		$(".work-entry:last").append(HTMLworkLocation.replace("%data%", work[jobs][i].location));
+// 		$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work[jobs][i].description));
+// 	};
 // };
+
+
+
+//OPTION 2 LOOP
+
+for (job in work.jobs) {
+	$("#workExperience").append(HTMLworkStart);
+	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	var formattedEmployerTitle = formattedEmployer + formattedTitle;
+	$(".work-entry:last").append(formattedEmployerTitle);
+	$(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[job].dates));
+	$(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[job].location));
+	$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
+
+};
 
 
 
