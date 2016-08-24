@@ -1,15 +1,5 @@
-var name = "Jaymast"
-var formattedName = HTMLheaderName.replace("%data%", name);
-
-var role = " Web Developer";
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
-
 var bio = {
-	"name" : "Jamie",
+	"name" : "jamie cho",
 	"role" : "Web developer",
 	"contact" : {
 		"mobile" : "56547887",
@@ -82,6 +72,14 @@ var projects = {
 };
 
 
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+
+
 $("#topContacts").append(HTMLmobile.replace("%data%", bio.contact.mobile));
 $("#topContacts").append(HTMLemail.replace("%data%", bio.contact.email));
 $("#topContacts").append(HTMLgithub.replace("%data%", bio.contact.github));
@@ -90,12 +88,15 @@ $("#topContacts").append(HTMLlocation.replace("%data%", bio.contact.location));
 $("#header").append(HTMLbioPic.replace("%data%", bio.picture));
 $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
 
+$("#main").append(internationalizeButton);
+
 if (bio.skills !== 0) {
 	$("#header").append(HTMLskillsStart);
 	$("#header").append(HTMLskills.replace("%data%", bio.skills [0]));
 	$("#header").append(HTMLskills.replace("%data%", bio.skills [1]));
 	$("#header").append(HTMLskills.replace("%data%", bio.skills [2]));
 };
+
 
 //OPTION 1 LOOP
 
@@ -113,7 +114,6 @@ if (bio.skills !== 0) {
 // };
 
 
-
 //OPTION 2 LOOP
 
 for (job in work.jobs) {
@@ -127,3 +127,19 @@ for (job in work.jobs) {
 	$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
 
 };
+
+// Internationalise name function -------//
+
+
+function inName(nameThing) {
+	var surUpName = nameThing.substr(nameThing.indexOf(' ')+1).toUpperCase();
+	var firstName = nameThing.substr(0,nameThing.indexOf(' '));
+	console.log(firstName);
+	var firstUpName = firstName.slice(0,1).toUpperCase() + firstName.slice(1).toLowerCase();
+	console.log(firstUpName);
+	return (firstUpName + " " + surUpName);
+  };
+
+// Internationalise name function -------//
+
+
