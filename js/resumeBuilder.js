@@ -61,13 +61,19 @@ var work ={
 
 
 var projects = {
-"proj":[
+"projs":[
 	{
 		"title" : "UX design",
 		"dates" : 2016,
 		"description": "UX for website",
-		"images": ["https://img1.wsimg.com/fos/sales/cwh/8/images/cats-with-hats-shop-02.jpg", "https://img1.wsimg.com/fos/sales/cwh/8/images/cats-with-hats-shop-02.jpg"]
-	}
+		"image": ["http://i4.aroq.com/3/2015-11-16-10-57-img_0135_cropped_70.jpg", "https://thumbs.dreamstime.com/x/h-m-hennes-mauritz-ab-shop-logo-22511436.jpg"]
+	},
+	{
+		"title" : "Graphic design",
+		"dates" : 2015,
+		"description": "Full branding for website",
+		"image": ["http://therealdeal.com/wp-content/uploads/2015/05/HM-Herald-Center3.jpeg", "http://sustainability.hm.com/content/dam/hm/about/images/en/Editorial%20images/H&M%20Sustainability/Commitments/carriers_4x3.jpg/_jcr_content/renditions/original"]
+	},
 	]
 };
 
@@ -142,4 +148,23 @@ function inName(nameThing) {
 
 // Internationalise name function -------//
 
+projects.display = function(){
+	for (proj in projects.projs) {
+		$("#projects").append(HTMLprojectStart);
+		$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.projs[proj].title));
+		$(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.projs[proj].dates));
+		$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.projs[proj].description));
+		$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projs[proj].image[0]));
+		$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projs[proj].image[1]));
+	}
+};
+
+projects.display();
+
+
+// var HTMLprojectStart = '<div class="project-entry"></div>';
+// var HTMLprojectTitle = '<a href="#">%data%</a>';
+// var HTMLprojectDates = '<div class="date-text">%data%</div>';
+// var HTMLprojectDescription = '<p><br>%data%</p>';
+// var HTMLprojectImage = '<img src="%data%">';
 
