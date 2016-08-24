@@ -85,8 +85,22 @@ function logClicks(x,y) {
   console.log('x location: ' + x + '; y location: ' + y);
 }
 
+// js version
+
+// $(document).click(function(loc) {
+//   var x = event.clientX;
+//     var y = event.clientY;
+//     var coords = "X coords: " + x + ", Y coords: " + y;
+//     console.log(coords);
+// });
+
+
+//
+
 $(document).click(function(loc) {
-  // your code goes here!
+  	var x = loc.pageX;
+    var y = loc.pageY;
+    logClicks(x,y);
 });
 
 

@@ -127,13 +127,3 @@ for (job in work.jobs) {
 	$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
 
 };
-
-
-
-// for (jobs in work) {
-	// for (i = 0; i < totalJobs; i++){
-
-	// 	$("#workExperience").append(HTMLworkStart);
-	// };
-
-// };
