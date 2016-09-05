@@ -5,7 +5,7 @@ var bio = {
 		"mobile" : "56547887",
 		"email" : "jay@dfskf.com",
 		"github" : "jay8367",
-		"location" : "Hong Kong"
+		"location" : "Las Vegas, NV, United States"
 	},
 	"welcomeMessage" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
 	"picture" : "http://d39kbiy71leyho.cloudfront.net/wp-content/uploads/2016/05/09170020/cats-politics-TN.jpg",
@@ -13,10 +13,10 @@ var bio = {
 };
 
 var education ={
-	"school":[
+	"schools":[
 	{
 		"name" : "WSCAD",
-		"location" : "London",
+		"location" : "New York, NY, United States",
 		"degree": "BA",
 	    "majors": ["photography"],
 	    "dates": 2006,
@@ -38,21 +38,21 @@ var work ={
 	{
 		"employer" : "Freelance",
 		"title" : "Developer",
-		"location": "HK",
+		"location": "San Jose, CA, United States",
 	    "dates": "In Progress",
 	    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 	},
 	{
 		"employer" : "Tago",
 		"title" : "Senior Developer",
-		"location": "UK",
+		"location": "San Francisco, CA, United States",
 	    "dates": "In Progress",
 	    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 	},
 	{
 		"employer" : "SAt",
 		"title" : "Junior Developer",
-		"location": "UK",
+		"location": "New York, NY, United States",
 	    "dates": "In Progress",
 	    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 	}
@@ -95,6 +95,7 @@ $("#header").append(HTMLbioPic.replace("%data%", bio.picture));
 $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
 
 $("#main").append(internationalizeButton);
+$("#mapDiv").append(googleMap);
 
 if (bio.skills !== 0) {
 	$("#header").append(HTMLskillsStart);
@@ -121,18 +122,20 @@ if (bio.skills !== 0) {
 
 
 //OPTION 2 LOOP
-
-for (job in work.jobs) {
-	$("#workExperience").append(HTMLworkStart);
-	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-	var formattedEmployerTitle = formattedEmployer + formattedTitle;
-	$(".work-entry:last").append(formattedEmployerTitle);
-	$(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[job].dates));
-	$(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[job].location));
-	$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
-
+work.display = function(){
+	for (job in work.jobs) {
+		$("#workExperience").append(HTMLworkStart);
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedEmployerTitle = formattedEmployer + formattedTitle;
+		$(".work-entry:last").append(formattedEmployerTitle);
+		$(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[job].dates));
+		$(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[job].location));
+		$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
+	};
 };
+
+work.display();
 
 // Internationalise name function -------//
 
@@ -162,9 +165,43 @@ projects.display = function(){
 projects.display();
 
 
-// var HTMLprojectStart = '<div class="project-entry"></div>';
-// var HTMLprojectTitle = '<a href="#">%data%</a>';
-// var HTMLprojectDates = '<div class="date-text">%data%</div>';
-// var HTMLprojectDescription = '<p><br>%data%</p>';
-// var HTMLprojectImage = '<img src="%data%">';
+// education.display = function(){
+// 	for (school in education.schools) {
+// 		$("#education").append(HTMLschoolStart);
+// 		var formattedSchName = HTMLschoolName.replace("%data%", education.schools[school].name);
+// 		var formattedSchDeg = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+// 		var formattedNameDeg = formattedSchName + formattedSchDeg;
+// 		$(".education-entry:last").append(formattedNameDeg);
+// 		$(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[school].dates));
+// 		$(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[school].location));
+// 		$(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[school].majors[0]));
+// 	},
+// 	{
+		
+// 	for (onlineCourse in education.onlineCourses) {
+// 		$("#education").append(HTMLonlineClasses);
+// 		var formattedCrName = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
+// 		var formattedCrSch = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
+// 		var formattedCrNamsch = formattedCrName + formattedCrSch;
+// 		$(".education-entry:last").append(formattedCrNamsch);
+// 		$(".education-entry:last").append(HTMLonlineDates.replace("%data%", education.schools[school].dates));
+// 		}
+// 	}
+// };
+
+// education.display();
+
+// var HTMLonlineClasses = '<h3>Online Classes</h3>';
+// var HTMLonlineTitle = '<a href="#">%data%';
+// var HTMLonlineSchool = ' - %data%</a>';
+// var HTMLonlineDates = '<div class="date-text">%data%</div>';
+// var HTMLonlineURL = '<br><a href="#">%data%</a>';
+
+// "onlineCourses" :[
+// 	{
+// 		"title" : "FEWD",
+// 		"school" : "Udacity",
+// 		"dates": 2016,
+// 	    "url": "http:www.udacity.com"
+// 	}
 
