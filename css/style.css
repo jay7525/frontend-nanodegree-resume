@@ -11,7 +11,7 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Playfair Display', serif;
 /*  font-family: 'Slabo 27px', serif;*/
 }
 
@@ -70,7 +70,7 @@ h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #777;
   line-height: 16px;
   float: left;
 }
@@ -134,7 +134,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #888;
 }
 
 .flex-box {

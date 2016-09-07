@@ -1,11 +1,11 @@
 var bio = {
 	"name" : "jamie cho",
 	"role" : "Web developer",
-	"contact" : {
+	"contacts" : {
 		"mobile" : "56547887",
 		"email" : "jay@dfskf.com",
 		"github" : "jay8367",
-		"location" : "Las Vegas, NV, United States"
+		"location" : "Las Vegas"
 	},
 	"welcomeMessage" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
 	"picture" : "http://d39kbiy71leyho.cloudfront.net/wp-content/uploads/2016/05/09170020/cats-politics-TN.jpg",
@@ -16,7 +16,7 @@ var education ={
 	"schools":[
 	{
 		"name" : "WSCAD",
-		"location" : "New York, NY, United States",
+		"location" : "New York",
 		"degree": "BA",
 	    "majors": ["photography"],
 	    "dates": 2006,
@@ -38,21 +38,21 @@ var work ={
 	{
 		"employer" : "Freelance",
 		"title" : "Developer",
-		"location": "San Jose, CA, United States",
+		"location": "San Jose",
 	    "dates": "In Progress",
 	    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 	},
 	{
 		"employer" : "Tago",
 		"title" : "Senior Developer",
-		"location": "San Francisco, CA, United States",
+		"location": "San Francisco",
 	    "dates": "In Progress",
 	    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 	},
 	{
 		"employer" : "SAt",
 		"title" : "Junior Developer",
-		"location": "New York, NY, United States",
+		"location": "New York",
 	    "dates": "In Progress",
 	    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 	}
@@ -86,10 +86,10 @@ $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
 
-$("#topContacts").append(HTMLmobile.replace("%data%", bio.contact.mobile));
-$("#topContacts").append(HTMLemail.replace("%data%", bio.contact.email));
-$("#topContacts").append(HTMLgithub.replace("%data%", bio.contact.github));
-$("#topContacts").append(HTMLlocation.replace("%data%", bio.contact.location));
+$("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+$("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
+$("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
+$("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
 
 $("#header").append(HTMLbioPic.replace("%data%", bio.picture));
 $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
@@ -204,4 +204,8 @@ projects.display();
 // 		"dates": 2016,
 // 	    "url": "http:www.udacity.com"
 // 	}
+
+
+
+
 
