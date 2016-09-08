@@ -79,7 +79,6 @@ var projects = {
 
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
-
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
 $("#header").prepend(formattedRole);
@@ -185,7 +184,8 @@ education.display = function(){
 		var formattedCrSch = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
 		var formattedCrNamsch = formattedCrName + formattedCrSch;
 		$(".education-entry:last").append(formattedCrNamsch);
-		$(".education-entry:last").append(HTMLonlineDates.replace("%data%", education.schools[school].dates));
+		$(".education-entry:last").append(HTMLonlineDates.replace("%data%", education.onlineClasses[onlineClass].dates));
+		// $(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineClasses[onlineClass].url));
 	}
 };
 
